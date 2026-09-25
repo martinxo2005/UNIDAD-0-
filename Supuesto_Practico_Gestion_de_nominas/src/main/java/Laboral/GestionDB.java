@@ -8,7 +8,9 @@ public class GestionDB {
 
     private Nomina calculaNomina = new Nomina();
 
-    // 2.1 y 2.3: Insertar o actualizar un empleado y guardar su sueldo resultante en la tabla Nominas
+    /**
+     * 2.1, 2.2 y 2.3 Metodo para guardar o actualizar un empleado y su sueldo en la base de datos
+     */
     public void guardarOActualizarEmpleado(Empleados emp) throws SQLException {
         String sqlEmpleado = "INSERT INTO Empleados (dni, nombre, sexo, categoria, anyos) " +
                              "VALUES (?, ?, ?, ?, ?) " +
@@ -18,10 +20,9 @@ public class GestionDB {
                            "ON DUPLICATE KEY UPDATE sueldo=?";
 
         try (Connection conn = ConexionDB.getConexion()) {
-            conn.setAutoCommit(false); // Iniciar transacción
+            conn.setAutoCommit(false);
 
             try {
-                // 1. Guardar/Actualizar Empleado
                 try (PreparedStatement psEmp = conn.prepareStatement(sqlEmpleado)) {
                     psEmp.setString(1, emp.dni);
                     psEmp.setString(2, emp.nombre);
@@ -37,7 +38,6 @@ public class GestionDB {
                     psEmp.executeUpdate();
                 }
 
-                // 2. Calcular sueldo y guardar/actualizar Nómina (2.3)
                 int sueldoCalculado = calculaNomina.sueldo(emp);
                 try (PreparedStatement psNom = conn.prepareStatement(sqlNomina)) {
                     psNom.setString(1, emp.dni);
@@ -47,15 +47,17 @@ public class GestionDB {
                     psNom.executeUpdate();
                 }
 
-                conn.commit(); // Confirmar transacción
+                conn.commit();
             } catch (SQLException e) {
-                conn.rollback(); // Cancelar cambios si ocurre error
+                conn.rollback();
                 throw e;
             }
         }
     }
 
-    // Obtener todos los empleados registrados en la base de datos
+    /**
+     * 5.1 Metodo para obtener todos los empleados registrados en la base de datos
+     */
     public List<Empleados> obtenerTodosEmpleados() throws SQLException, DatosNoCorrectosException {
         List<Empleados> lista = new ArrayList<>();
         String sql = "SELECT dni, nombre, sexo, categoria, anyos FROM Empleados";
@@ -78,7 +80,9 @@ public class GestionDB {
         return lista;
     }
 
-    // Obtener un empleado por su DNI
+    /**
+     * Metodo para consultar un empleado por su DNI
+     */
     public Empleados obtenerEmpleadoPorDni(String dni) throws SQLException, DatosNoCorrectosException {
         String sql = "SELECT dni, nombre, sexo, categoria, anyos FROM Empleados WHERE dni = ?";
         
@@ -100,7 +104,9 @@ public class GestionDB {
         return null;
     }
 
-    // Obtener el sueldo almacenado de un empleado por DNI
+    /**
+     * 5.2 Metodo para obtener el salario de un empleado especifico por su DNI desde la base de datos
+     */
     public Integer obtenerSueldoPorDni(String dni) throws SQLException {
         String sql = "SELECT sueldo FROM Nominas WHERE dni = ?";
         
@@ -117,7 +123,9 @@ public class GestionDB {
         return null;
     }
 
-    // Recalcular y actualizar únicamente la nómina en la BD para un empleado
+    /**
+     * 5.4 Metodo para recalcular y actualizar el sueldo de un empleado
+     */
     public boolean recalcularSueldoEmpleado(String dni) throws SQLException, DatosNoCorrectosException {
         Empleados emp = obtenerEmpleadoPorDni(dni);
         if (emp != null) {
@@ -127,7 +135,9 @@ public class GestionDB {
         return false;
     }
 
-    // Recalcular y actualizar las nóminas de TODOS los empleados
+    /**
+     * 5.5 Metodo para recalcular y actualizar los sueldos de todos los empleados
+     */
     public void recalcularTodosSueldos() throws SQLException, DatosNoCorrectosException {
         List<Empleados> lista = obtenerTodosEmpleados();
         for (Empleados emp : lista) {
@@ -135,4 +145,3 @@ public class GestionDB {
         }
     }
 }
-    
