@@ -18,6 +18,7 @@
                     <th>Sexo</th>
                     <th>Categoría</th>
                     <th>Años</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,12 +33,15 @@
                     <td><%= emp.sexo %></td>
                     <td><%= emp.getCategoria() %></td>
                     <td><%= emp.anyos %></td>
+                    <td>
+                        <a href="cargarEmpleado?dni=<%= emp.dni %>" class="btn btn-sm">Modificar</a>
+                    </td>
                 </tr>
                 <%
                         }
                     } else {
                 %>
-                <tr><td colspan="5">No se encontraron empleados con los criterios introducidos.</td></tr>
+                <tr><td colspan="6">No se encontraron empleados con los criterios introducidos.</td></tr>
                 <% } %>
             </tbody>
         </table>

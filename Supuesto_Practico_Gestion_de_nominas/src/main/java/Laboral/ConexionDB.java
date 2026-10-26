@@ -5,15 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexionDB {
-    
-    // Configuracion de conexión a la bbdd
+
     private static final String URL = "jdbc:mysql://localhost:3306/empresa_nominas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-    private static final String USUARIO = "root";
-    private static final String PASSWORD = "123456";
-    private static final String database = "empresa_nominas";
+    private static final String USER = "root";
+    private static final String PASS = "123456"; // Debe ser igual a la configurada en MariaDB
 
     public static Connection getConexion() throws SQLException {
-        return DriverManager.getConnection(URL, USUARIO, PASSWORD);
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return DriverManager.getConnection(URL, USER, PASS);
     }
 }
-
