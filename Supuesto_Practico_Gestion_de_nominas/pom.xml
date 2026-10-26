@@ -11,6 +11,24 @@
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>com.mycompany.supuesto_practico_gestion_de_nominas.Supuesto_Practico_Gestion_de_nominas</exec.mainClass>
     </properties>
+    <dependencies>
+    <!-- Dependencia para Servlets Jakarta (Tomcat 10+) -->
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>6.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- Si usas una versión anterior de Tomcat (Tomcat 9 o inferior), utiliza javax en su lugar:
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>4.0.1</version>
+        <scope>provided</scope>
+    </dependency>
+    -->
+</dependencies>
     <build>
     <plugins>
       <plugin>

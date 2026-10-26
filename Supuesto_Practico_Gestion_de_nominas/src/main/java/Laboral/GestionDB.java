@@ -1,6 +1,9 @@
 package Laboral;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,9 +11,6 @@ public class GestionDB {
 
     private Nomina calculaNomina = new Nomina();
 
-    /**
-     * 2.1, 2.2 y 2.3 Metodo para guardar o actualizar un empleado y su sueldo en la base de datos
-     */
     public void guardarOActualizarEmpleado(Empleados emp) throws SQLException {
         String sqlEmpleado = "INSERT INTO Empleados (dni, nombre, sexo, categoria, anyos) " +
                              "VALUES (?, ?, ?, ?, ?) " +
@@ -55,9 +55,6 @@ public class GestionDB {
         }
     }
 
-    /**
-     * 5.1 Metodo para obtener todos los empleados registrados en la base de datos
-     */
     public List<Empleados> obtenerTodosEmpleados() throws SQLException, DatosNoCorrectosException {
         List<Empleados> lista = new ArrayList<>();
         String sql = "SELECT dni, nombre, sexo, categoria, anyos FROM Empleados";
@@ -80,9 +77,6 @@ public class GestionDB {
         return lista;
     }
 
-    /**
-     * Metodo para consultar un empleado por su DNI
-     */
     public Empleados obtenerEmpleadoPorDni(String dni) throws SQLException, DatosNoCorrectosException {
         String sql = "SELECT dni, nombre, sexo, categoria, anyos FROM Empleados WHERE dni = ?";
         
@@ -104,9 +98,6 @@ public class GestionDB {
         return null;
     }
 
-    /**
-     * 5.2 Metodo para obtener el salario de un empleado especifico por su DNI desde la base de datos
-     */
     public Integer obtenerSueldoPorDni(String dni) throws SQLException {
         String sql = "SELECT sueldo FROM Nominas WHERE dni = ?";
         
@@ -123,9 +114,6 @@ public class GestionDB {
         return null;
     }
 
-    /**
-     * 5.4 Metodo para recalcular y actualizar el sueldo de un empleado
-     */
     public boolean recalcularSueldoEmpleado(String dni) throws SQLException, DatosNoCorrectosException {
         Empleados emp = obtenerEmpleadoPorDni(dni);
         if (emp != null) {
@@ -135,13 +123,63 @@ public class GestionDB {
         return false;
     }
 
-    /**
-     * 5.5 Metodo para recalcular y actualizar los sueldos de todos los empleados
-     */
     public void recalcularTodosSueldos() throws SQLException, DatosNoCorrectosException {
         List<Empleados> lista = obtenerTodosEmpleados();
         for (Empleados emp : lista) {
             guardarOActualizarEmpleado(emp);
         }
+    }
+
+    /**
+     * Búsqueda dinámica con filtros para la web
+     */
+    public List<Empleados> buscarFiltrado(String dni, String nombre, String sexo, String categoria, String anyos) 
+            throws SQLException, DatosNoCorrectosException {
+        
+        List<Empleados> lista = new ArrayList<>();
+        StringBuilder sql = new StringBuilder("SELECT dni, nombre, sexo, categoria, anyos FROM Empleados WHERE 1=1");
+        List<Object> params = new ArrayList<>();
+
+        if (dni != null && !dni.trim().isEmpty()) {
+            sql.append(" AND dni LIKE ?");
+            params.add("%" + dni.trim() + "%");
+        }
+        if (nombre != null && !nombre.trim().isEmpty()) {
+            sql.append(" AND nombre LIKE ?");
+            params.add("%" + nombre.trim() + "%");
+        }
+        if (sexo != null && !sexo.trim().isEmpty()) {
+            sql.append(" AND sexo = ?");
+            params.add(sexo.trim());
+        }
+        if (categoria != null && !categoria.trim().isEmpty()) {
+            sql.append(" AND categoria = ?");
+            params.add(Integer.parseInt(categoria.trim()));
+        }
+        if (anyos != null && !anyos.trim().isEmpty()) {
+            sql.append(" AND anyos = ?");
+            params.add(Integer.parseInt(anyos.trim()));
+        }
+
+        try (Connection conn = ConexionDB.getConexion();
+             PreparedStatement ps = conn.prepareStatement(sql.toString())) {
+            
+            for (int i = 0; i < params.size(); i++) {
+                ps.setObject(i + 1, params.get(i));
+            }
+            
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    String d = rs.getString("dni");
+                    String n = rs.getString("nombre");
+                    char s = rs.getString("sexo").charAt(0);
+                    int c = rs.getInt("categoria");
+                    int a = rs.getInt("anyos");
+
+                    lista.add(new Empleados(c, a, n, d, s));
+                }
+            }
+        }
+        return lista;
     }
 }
