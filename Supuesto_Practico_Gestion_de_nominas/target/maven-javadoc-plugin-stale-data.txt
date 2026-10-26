@@ -2,44 +2,100 @@
 -J-Duser.country=
 @options
 @packages
+--no-fonts
+-classpath
+'C:/Users/usuario26/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar;C:/Users/usuario26/.m2/repository/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar;C:/Users/usuario26/.m2/repository/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/plugins/maven-javadoc-plugin/3.12.0/maven-javadoc-plugin-3.12.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/resolver/maven-resolver-util/1.4.1/maven-resolver-util-1.4.1.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/resolver/maven-resolver-api/1.4.1/maven-resolver-api-1.4.1.jar;C:/Users/usuario26/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/reporting/maven-reporting-api/4.0.0/maven-reporting-api-4.0.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/maven-archiver/3.6.4/maven-archiver-3.6.4.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-interpolation/1.28/plexus-interpolation-1.28.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/shared/maven-invoker/3.3.0/maven-invoker-3.3.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/shared/maven-common-artifact-filters/3.4.0/maven-common-artifact-filters-3.4.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/doxia/doxia-sink-api/2.0.0/doxia-sink-api-2.0.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/doxia/doxia-site-renderer/2.0.0/doxia-site-renderer-2.0.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/doxia/doxia-core/2.0.0/doxia-core-2.0.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/doxia/doxia-site-model/2.0.0/doxia-site-model-2.0.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/doxia/doxia-skin-model/2.0.0/doxia-skin-model-2.0.0.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/doxia/doxia-module-xhtml5/2.0.0/doxia-module-xhtml5-2.0.0.jar;C:/Users/usuario26/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.jar;C:/Users/usuario26/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-component-annotations/2.1.0/plexus-component-annotations-2.1.0.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-classworlds/2.6.0/plexus-classworlds-2.6.0.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-velocity/2.2.0/plexus-velocity-2.2.0.jar;C:/Users/usuario26/.m2/repository/org/apache/velocity/velocity-engine-core/2.4/velocity-engine-core-2.4.jar;C:/Users/usuario26/.m2/repository/org/apache/velocity/tools/velocity-tools-generic/3.1/velocity-tools-generic-3.1.jar;C:/Users/usuario26/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar;C:/Users/usuario26/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar;C:/Users/usuario26/.m2/repository/org/apache/commons/commons-digester3/3.2/commons-digester3-3.2.jar;C:/Users/usuario26/.m2/repository/com/github/cliftonlabs/json-simple/3.0.2/json-simple-3.0.2.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/doxia/doxia-integration-tools/2.0.0/doxia-integration-tools-2.0.0.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar;C:/Users/usuario26/.m2/repository/org/apache/maven/wagon/wagon-provider-api/3.5.3/wagon-provider-api-3.5.3.jar;C:/Users/usuario26/.m2/repository/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar;C:/Users/usuario26/.m2/repository/org/apache/commons/commons-text/1.14.0/commons-text-1.14.0.jar;C:/Users/usuario26/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar;C:/Users/usuario26/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar;C:/Users/usuario26/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar;C:/Users/usuario26/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar;C:/Users/usuario26/.m2/repository/com/thoughtworks/qdox/qdox/2.2.0/qdox-2.2.0.jar;C:/Users/usuario26/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-java/1.5.0/plexus-java-1.5.0.jar;C:/Users/usuario26/.m2/repository/org/ow2/asm/asm/9.8/asm-9.8.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-utils/4.0.2/plexus-utils-4.0.2.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-xml/3.0.1/plexus-xml-3.0.1.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-io/3.5.1/plexus-io-3.5.1.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-archiver/4.10.0/plexus-archiver-4.10.0.jar;C:/Users/usuario26/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar;C:/Users/usuario26/.m2/repository/io/airlift/aircompressor/0.27/aircompressor-0.27.jar;C:/Users/usuario26/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar;C:/Users/usuario26/.m2/repository/org/codehaus/plexus/plexus-interactivity-api/1.4/plexus-interactivity-api-1.4.jar'
 -encoding
 'UTF-8'
 -protected
 -source
 '17'
 -sourcepath
-'C:/Users/usuario26/Documents/NetBeansProjects/Supuesto_Practico_Gestion_de_nominas/src/main/java'
+'C:/Users/usuario26/Documents/Martin_2DAW/Entorno_Servidor/UNIDAD-0-/Supuesto_Practico_Gestion_de_nominas/src/main/java'
 -author
 -bottom
-'Copyright &#169; 2026. All rights reserved.'
+'Copyright &#169; 1980. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'C:/Users/usuario26/Documents/NetBeansProjects/Supuesto_Practico_Gestion_de_nominas/target/reports/apidocs'
+'C:/Users/usuario26/Documents/Martin_2DAW/Entorno_Servidor/UNIDAD-0-/Supuesto_Practico_Gestion_de_nominas/target/reports/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
 'Supuesto_Practico_Gestion_de_nominas 1.0-SNAPSHOT API'
+-notimestamp
 -use
 -version
 -windowtitle
 'Supuesto_Practico_Gestion_de_nominas 1.0-SNAPSHOT API'
 Laboral
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\src\main\java = 1789554129350
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\allclasses-index.html = 1789722360156
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\allpackages-index.html = 1789722360159
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\element-list = 1789722360071
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\help-doc.html = 1789722360188
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\index-all.html = 1789722360180
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\index.html = 1789722360183
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\jquery-ui.overrides.css = 1789722360214
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\member-search-index.js = 1789722360167
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\module-search-index.js = 1789722360161
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\overview-tree.html = 1789722360142
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\package-search-index.js = 1789722360163
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\script.js = 1789722360194
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\search.js = 1789722360198
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\serialized-form.html = 1789722360103
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\stylesheet.css = 1789722360191
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\tag-search-index.js = 1789722360169
-C:\Users\usuario26\Documents\NetBeansProjects\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\type-search-index.js = 1789722360165
+C:\Users\usuario26\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.0.0\jakarta.servlet-api-6.0.0.jar = 1792135963926
+C:\Users\usuario26\.m2\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar = 1792135964836
+C:\Users\usuario26\.m2\repository\com\google\protobuf\protobuf-java\3.25.1\protobuf-java-3.25.1.jar = 1792135964531
+C:\Users\usuario26\.m2\repository\org\apache\maven\plugins\maven-javadoc-plugin\3.12.0\maven-javadoc-plugin-3.12.0.jar = 1789721876518
+C:\Users\usuario26\.m2\repository\org\apache\maven\resolver\maven-resolver-util\1.4.1\maven-resolver-util-1.4.1.jar = 1789721891699
+C:\Users\usuario26\.m2\repository\org\apache\maven\resolver\maven-resolver-api\1.4.1\maven-resolver-api-1.4.1.jar = 1789721891879
+C:\Users\usuario26\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar = 1789721891810
+C:\Users\usuario26\.m2\repository\org\apache\maven\reporting\maven-reporting-api\4.0.0\maven-reporting-api-4.0.0.jar = 1789721891928
+C:\Users\usuario26\.m2\repository\org\apache\maven\maven-archiver\3.6.4\maven-archiver-3.6.4.jar = 1789721891956
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.28\plexus-interpolation-1.28.jar = 1789721892017
+C:\Users\usuario26\.m2\repository\org\apache\maven\shared\maven-invoker\3.3.0\maven-invoker-3.3.0.jar = 1789721891908
+C:\Users\usuario26\.m2\repository\org\apache\maven\shared\maven-shared-utils\3.4.2\maven-shared-utils-3.4.2.jar = 1789721892052
+C:\Users\usuario26\.m2\repository\org\apache\maven\shared\maven-common-artifact-filters\3.4.0\maven-common-artifact-filters-3.4.0.jar = 1789721892042
+C:\Users\usuario26\.m2\repository\org\apache\maven\doxia\doxia-sink-api\2.0.0\doxia-sink-api-2.0.0.jar = 1789721892050
+C:\Users\usuario26\.m2\repository\org\apache\maven\doxia\doxia-site-renderer\2.0.0\doxia-site-renderer-2.0.0.jar = 1789721892062
+C:\Users\usuario26\.m2\repository\org\apache\maven\doxia\doxia-core\2.0.0\doxia-core-2.0.0.jar = 1789721892439
+C:\Users\usuario26\.m2\repository\org\apache\maven\doxia\doxia-site-model\2.0.0\doxia-site-model-2.0.0.jar = 1789721892409
+C:\Users\usuario26\.m2\repository\org\apache\maven\doxia\doxia-skin-model\2.0.0\doxia-skin-model-2.0.0.jar = 1789721892381
+C:\Users\usuario26\.m2\repository\org\apache\maven\doxia\doxia-module-xhtml5\2.0.0\doxia-module-xhtml5-2.0.0.jar = 1789721892386
+C:\Users\usuario26\.m2\repository\org\eclipse\sisu\org.eclipse.sisu.plexus\0.9.0.M3\org.eclipse.sisu.plexus-0.9.0.M3.jar = 1793021439881
+C:\Users\usuario26\.m2\repository\org\eclipse\sisu\org.eclipse.sisu.inject\0.9.0.M3\org.eclipse.sisu.inject-0.9.0.M3.jar = 1793021439982
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-component-annotations\2.1.0\plexus-component-annotations-2.1.0.jar = 1789721892478
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.6.0\plexus-classworlds-2.6.0.jar = 1789721892600
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-velocity\2.2.0\plexus-velocity-2.2.0.jar = 1789721892653
+C:\Users\usuario26\.m2\repository\org\apache\velocity\velocity-engine-core\2.4\velocity-engine-core-2.4.jar = 1789721894530
+C:\Users\usuario26\.m2\repository\org\apache\velocity\tools\velocity-tools-generic\3.1\velocity-tools-generic-3.1.jar = 1789721892799
+C:\Users\usuario26\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar = 1789721893160
+C:\Users\usuario26\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar = 1789721894530
+C:\Users\usuario26\.m2\repository\org\apache\commons\commons-digester3\3.2\commons-digester3-3.2.jar = 1789721893600
+C:\Users\usuario26\.m2\repository\com\github\cliftonlabs\json-simple\3.0.2\json-simple-3.0.2.jar = 1789721893243
+C:\Users\usuario26\.m2\repository\org\apache\maven\doxia\doxia-integration-tools\2.0.0\doxia-integration-tools-2.0.0.jar = 1789721893541
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-i18n\1.0-beta-10\plexus-i18n-1.0-beta-10.jar = 1789721893576
+C:\Users\usuario26\.m2\repository\org\apache\maven\wagon\wagon-provider-api\3.5.3\wagon-provider-api-3.5.3.jar = 1789721893729
+C:\Users\usuario26\.m2\repository\org\apache\commons\commons-lang3\3.18.0\commons-lang3-3.18.0.jar = 1789721895286
+C:\Users\usuario26\.m2\repository\org\apache\commons\commons-text\1.14.0\commons-text-1.14.0.jar = 1789721895431
+C:\Users\usuario26\.m2\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar = 1789721895444
+C:\Users\usuario26\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar = 1789721895309
+C:\Users\usuario26\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar = 1789721895686
+C:\Users\usuario26\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar = 1789721895567
+C:\Users\usuario26\.m2\repository\com\thoughtworks\qdox\qdox\2.2.0\qdox-2.2.0.jar = 1789721895803
+C:\Users\usuario26\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar = 1789721895614
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-java\1.5.0\plexus-java-1.5.0.jar = 1789721895601
+C:\Users\usuario26\.m2\repository\org\ow2\asm\asm\9.8\asm-9.8.jar = 1789721895753
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-utils\4.0.2\plexus-utils-4.0.2.jar = 1789721895783
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-xml\3.0.1\plexus-xml-3.0.1.jar = 1789721895881
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-io\3.5.1\plexus-io-3.5.1.jar = 1789721896620
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-archiver\4.10.0\plexus-archiver-4.10.0.jar = 1789721895914
+C:\Users\usuario26\.m2\repository\org\apache\commons\commons-compress\1.26.2\commons-compress-1.26.2.jar = 1789721897593
+C:\Users\usuario26\.m2\repository\io\airlift\aircompressor\0.27\aircompressor-0.27.jar = 1789721897303
+C:\Users\usuario26\.m2\repository\commons-io\commons-io\2.20.0\commons-io-2.20.0.jar = 1789721898193
+C:\Users\usuario26\.m2\repository\org\codehaus\plexus\plexus-interactivity-api\1.4\plexus-interactivity-api-1.4.jar = 1789721897458
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\src\main\java = 1793012007656
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\allclasses-index.html = 1793021978672
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\allpackages-index.html = 1793021978674
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\element-list = 1793021978546
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\help-doc.html = 1793021978711
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\index-all.html = 1793021978701
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\index.html = 1793021978707
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\jquery-ui.overrides.css = 1793012007691
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\member-search-index.js = 1793021978682
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\module-search-index.js = 1793021978676
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\overview-tree.html = 1793021978653
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\package-search-index.js = 1793021978678
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\script.js = 1793012007702
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\search.html = 1793021978704
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\search.js = 1793012007702
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\serialized-form.html = 1793021978576
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\stylesheet.css = 1793012007704
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\tag-search-index.js = 1793021978684
+C:\Users\usuario26\Documents\Martin_2DAW\Entorno_Servidor\UNIDAD-0-\Supuesto_Practico_Gestion_de_nominas\target\reports\apidocs\type-search-index.js = 1793021978680
